@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculate</title>
+</head> 
+
+<body>
+    <div>
+        <h2>BMI</h2>
+        <label for="WEIGHT">WEIGHT: </label>
+        <input type="number" id="WEIGHT">
+        <label for="HEIGHT">HEIGHT: </label>
+        <input type="number" id="HEIGHT">
+        <button onclick="calculate()">Calculate</button>
+        <p id="answ"></p>
+    </div>
+    <script>
+        function calculate() {
+    let WEIGHT= document.getElementById("WEIGHT").value;
+    let HEIGHT = document.getElementById("HEIGHT").value;
+
+    if (WEIGHT > 0 && HEIGHT > 0) {
+        let BMI = WEIGHT/(HEIGHT * HEIGHT) ;
+
+        if(BMI>=20)
+    {
+        document.getElementById("answ").innerHTML = `your bmi is normal:${BMI}`;
+    }
+    else{
+        document.getElementById("answ").innerHTML = `you are underweight ${BMI}`;
+    }
+    } else {
+        document.getElementById("answ").innerHTML = "Please fill out this field";
+    }
+}
+    </script>
+</body>
+</html>
